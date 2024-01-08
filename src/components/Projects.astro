@@ -1,0 +1,48 @@
+---
+import REACT from "./icons/ReactJS.astro";
+import TAILWIND from "./icons/TailwindCSS.astro";
+const TAGS = {
+    REACT: {
+        name: "React",
+        class: "bg-black text-white",
+        icon: REACT,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-black text-white",
+        icon: TAILWIND,
+    }
+}
+   
+
+const PROJECTS = [
+    {
+        title: "PHP - Cree el maldito lenguaje más usado en la web",
+        description: "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
+        link: "https://www.php.net/",
+        github: "https://github.com/php",
+        image: "/projects/svgl.webp",
+        tags: [TAGS.REACT, TAGS.TAILWIND],
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, tags, image})=>(
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map(tag=>(
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4" />
+                            { tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Imagen del proyecto: ${title}`}>
+        </article>
+    ))
+}
