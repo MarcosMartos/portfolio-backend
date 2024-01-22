@@ -1,0 +1,33 @@
+---
+import Badge from "@/components/Badge.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Layout from "@/layouts/Layout.astro"
+import SocialMedia from "@/components/SocialMedia.astro"
+import LinkedinIcon from "@/components/icons/Linkedin.astro"
+---
+
+<Layout 
+    title="Design System porfolio.dev" 
+    description="Catalogo de componentes de nuestro porfolio">
+
+    <SectionContainer class="py-44 pb-32 flex flex-col gap-y-10">
+        <article class="mb-10">
+            <h1 class="mb-4 text-xl font-semibold">&lt;Badge /&gt;</h1>
+
+            <Badge>Disponible para trabajar</Badge>
+        </article>
+       
+        <article class="mb-10">
+            <h1 class="mb-4 text-xl font-semibold">&lt;SocialMedia /&gt;</h1>
+            <div class="flex">
+                <SocialMedia href="https://www.linkedin.com/in/marcos-martos>">
+                    <LinkedinIcon class="size-4 md:size-6"/>
+                     Linkedin
+                </SocialMedia>
+            </div>
+        </article>
+        
+
+    </SectionContainer>
+
+</Layout>

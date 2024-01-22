@@ -1,6 +1,10 @@
 ---
 import REACT from "./icons/ReactJS.astro";
 import TAILWIND from "./icons/TailwindCSS.astro";
+import MATERIALUI from "./icons/MaterialUi.astro";
+import FIREBASE from "./icons/Firebase.astro";
+import LinkButtom from "./LinkButtom.astro";
+import Github from "./icons/Github.astro";
 const TAGS = {
     REACT: {
         name: "React",
@@ -11,25 +15,51 @@ const TAGS = {
         name: "Tailwind CSS",
         class: "bg-black text-white",
         icon: TAILWIND,
+    },
+    MATERIALUI: {
+        name: "Material UI",
+        class: "bg-black text-white",
+        icon: MATERIALUI,
+    },
+    FIREBASE: {
+        name: "Firebase",
+        class: "bg-black text-white",
+        icon: FIREBASE,
     }
 }
    
 
 const PROJECTS = [
     {
-        title: "PHP - Cree el maldito lenguaje más usado en la web",
-        description: "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
+        title: "E-commerce - Sitio web de Adidas desarrollado con React",
+        description: "Proyecto realizado para curso de ReactJS en Coderhouse, implementando lógica de negocio, y metodologías ágiles.",
         link: "https://www.php.net/",
         github: "https://github.com/php",
-        image: "/projects/svgl.webp",
+        image: "/projects/ecommerce-react-img.webp",
+        tags: [TAGS.REACT, TAGS.MATERIALUI, TAGS.FIREBASE],
+    },
+    {
+        title: "Calculadora - Desarrollo de lógica Javascript",
+        description: "Proyecto de una calculadora para aplicación de lógica javascript con diseño responsivo.",
+        link: "https://www.php.net/",
+        github: "https://github.com/php",
+        image: "/projects/calculadora-img.webp",
+        tags: [TAGS.REACT, TAGS.TAILWIND],
+    },
+    {
+        title: "Tres en raya - Juego para el manejo de estados",
+        description: "Juego para la implementación de lógica y manejo de estados y hooks en react.",
+        link: "https://www.php.net/",
+        github: "https://github.com/php",
+        image: "/projects/tres-en-raya.webp",
         tags: [TAGS.REACT, TAGS.TAILWIND],
     }
 ]
 ---
 
 {
-    PROJECTS.map(({title, description, tags, image})=>(
-        <article>
+    PROJECTS.map(({title, description, tags, image, link, github})=>(
+        <article class="mb-20">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class="flex gap-x-2 flex-row mb-2">
@@ -43,6 +73,17 @@ const PROJECTS = [
                 ))}
             </ul>
             <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Imagen del proyecto: ${title}`}>
+            <footer class="flex gap-x-4 mt-4 justify-start">
+                {github && (<LinkButtom href={github}>
+                    <Github class="size-6"/>
+                    Ver código
+                </LinkButtom>
+                )}
+                <LinkButtom href={link}>
+                    <svg  class="icon icon-tabler icon-tabler-external-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>
+                    Ir al sitio
+                </LinkButtom>    
+            </footer>
         </article>
     ))
 }
