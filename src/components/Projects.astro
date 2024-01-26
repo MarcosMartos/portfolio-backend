@@ -5,13 +5,17 @@ import MATERIALUI from "./icons/MaterialUi.astro";
 import FIREBASE from "./icons/Firebase.astro";
 import LinkButtom from "./LinkButtom.astro";
 import Github from "./icons/Github.astro";
+import JAVASCRIPT from "./icons/Javascript.astro";
+import CSS from "./icons/CSS.astro";
+import PYTHON from "./icons/Python.astro";
+
 const TAGS = {
     REACT: {
         name: "React",
         class: "bg-black text-white",
         icon: REACT,
     },
-    TAILWIND: {
+    TAILWINDCSS: {
         name: "Tailwind CSS",
         class: "bg-black text-white",
         icon: TAILWIND,
@@ -25,6 +29,21 @@ const TAGS = {
         name: "Firebase",
         class: "bg-black text-white",
         icon: FIREBASE,
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-black text-white",
+        icon: JAVASCRIPT,
+    },
+    CSS: {
+        name: "CSS3",
+        class: "bg-black text-white",
+        icon: CSS,
+    },
+    PYTHON: {
+        name: "Python",
+        class: "bg-black text-white",
+        icon: PYTHON,
     }
 }
    
@@ -33,26 +52,25 @@ const PROJECTS = [
     {
         title: "E-commerce - Sitio web de Adidas desarrollado con React",
         description: "Proyecto realizado para curso de ReactJS en Coderhouse, implementando lógica de negocio, y metodologías ágiles.",
-        link: "https://www.php.net/",
-        github: "https://github.com/php",
-        image: "/projects/ecommerce-react-img.webp",
+        github: "https://github.com/MarcosMartos/Ecommerce-Adidas",
+        image: "/projects/ecommerce-react.webp",
         tags: [TAGS.REACT, TAGS.MATERIALUI, TAGS.FIREBASE],
     },
     {
-        title: "Calculadora - Desarrollo de lógica Javascript",
+        title: "Calculadora",
         description: "Proyecto de una calculadora para aplicación de lógica javascript con diseño responsivo.",
-        link: "https://www.php.net/",
-        github: "https://github.com/php",
-        image: "/projects/calculadora-img.webp",
-        tags: [TAGS.REACT, TAGS.TAILWIND],
+        link: "https://calculadora-marcosmartos.vercel.app/",
+        github: "https://github.com/MarcosMartos/Calculadora.git",
+        image: "/projects/calculadora-javascript.webp",
+        tags: [TAGS.JAVASCRIPT, TAGS.CSS],
     },
     {
         title: "Tres en raya - Juego para el manejo de estados",
         description: "Juego para la implementación de lógica y manejo de estados y hooks en react.",
-        link: "https://www.php.net/",
-        github: "https://github.com/php",
+        link: "https://tres-en-raya-marcosmartos.vercel.app/",
+        github: "https://github.com/MarcosMartos/Tres-en-raya.git",
         image: "/projects/tres-en-raya.webp",
-        tags: [TAGS.REACT, TAGS.TAILWIND],
+        tags: [TAGS.REACT, TAGS.CSS],
     }
 ]
 ---
@@ -79,10 +97,10 @@ const PROJECTS = [
                     Ver código
                 </LinkButtom>
                 )}
-                <LinkButtom href={link}>
+                {link && ( <LinkButtom href={link}>
                     <svg  class="icon icon-tabler icon-tabler-external-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>
                     Ir al sitio
-                </LinkButtom>    
+                </LinkButtom>    )}
             </footer>
         </article>
     ))
