@@ -13,11 +13,13 @@ import CodeIcon from '@/components/icons/Code.astro';
 import Projects from '@/components/Projects.astro';
 import ProfileCheck from '@/components/icons/ProfileCheck.astro';
 import AboutMe from "@/components/AboutMe.astro";
+import ToolIcon from "@/components/icons/Tool.astro";
+import Tecnologias from "@/components/Tecnologias.astro";
 ---
 
 <Layout 
 	title="Portfolio de Marcos Martos - Desarrollador y Programador Web"
-	description="Contrata a Marcos Martos para desarrollar tu sitio web. Desarollador Web y Estudiante. Especializado en Javascript."
+	description="Contrata a Marcos Martos para desarrollar tu sitio web. Desarollador Web y Estudiante. Especializado en Javascript.",
 > 
 	<main class="px-4">
 		<SectionContainer id="top" class="py-44 pb-32">
@@ -64,6 +66,14 @@ import AboutMe from "@/components/AboutMe.astro";
 			Sobre mi
 		</h2>
 		<AboutMe />
+	</SectionContainer>
+
+	<SectionContainer id="tecnologías">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+			<ToolIcon class="size-8"/>
+			Tecnologías
+		</h2>
+		<Tecnologias />
 	</SectionContainer>
 
 
