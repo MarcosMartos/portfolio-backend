@@ -8,6 +8,8 @@ import Github from "./icons/Github.astro";
 import JAVASCRIPT from "./icons/Javascript.astro";
 import CSS from "./icons/CSS.astro";
 import PYTHON from "./icons/Python.astro";
+import POSTGRESQL from "./icons/Postgresql.astro";
+import NODE from "./icons/Node.astro";
 
 const TAGS = {
     REACT: {
@@ -44,11 +46,29 @@ const TAGS = {
         name: "Python",
         class: "bg-black text-white",
         icon: PYTHON,
+    },
+    NODE: {
+        name: "Node",
+        class: "bg-black text-white",
+        icon: NODE
+    },
+    POSTGRESQL: {
+        name: "Postgresql",
+        class: "bg-black text-white",
+        icon: POSTGRESQL
     }
 }
    
 
 const PROJECTS = [
+    {
+        title: "NextStep - Blog de Tecnología",
+        description: "NexStep es un blog de artículos sobre tecnología, gestión de proyectos, técnicas de organización, productividad, negocios y mucho más.",
+        link: "https://nextstep-blog-marcosmartos04.netlify.app/",
+        github: "https://github.com/MarcosMartos/nextstep-blog.git",
+        image: "/projects/home.webp",
+        tags: [TAGS.REACT, TAGS.MATERIALUI, TAGS.NODE, TAGS.POSTGRESQL]
+    },
     {
         title: "E-commerce - Sitio web de Adidas desarrollado con React",
         description: "Proyecto realizado para curso de ReactJS en Coderhouse, implementando lógica de negocio, y metodologías ágiles.",
